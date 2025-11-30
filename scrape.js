@@ -58,7 +58,7 @@ async function scrapeWeatherData() {
           for (const el of valueElements) {
             const text = el.textContent.trim();
             // Buscar número con o sin decimal (ej: 0.0, 1.8)
-            if (/^\d+\.\d+$/.test(text)) {
+                        if (/^\d+(\.\d+)?$/.test(text)) {
               viento = text + ' km/h';
               break;
             }

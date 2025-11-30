@@ -1,0 +1,12 @@
+{
+  "name": "ecowitt-weather-scraper",
+  "version": "1.0.0",
+  "description": "Scrape Ecowitt weather data and save to JSON",
+  "main": "scrape.js",
+  "scripts": {
+    "scrape": "node scrape.js"
+  },
+  "dependencies": {
+    "playwright": "^1.40.0"
+  }
+}

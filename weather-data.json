@@ -1,7 +1,7 @@
 {
-  "temperatura": null,
-  "humedad": null,
+  "temperatura": "13.7°C",
+  "humedad": "75%",
   "viento": null,
-  "presion": null,
-  "timestamp": "2025-11-30T21:49:55.928Z"
+  "presion": "1013.5 hPa",
+  "timestamp": "2025-11-30T21:57:29.363Z"
 }

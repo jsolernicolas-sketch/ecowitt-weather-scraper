@@ -48,24 +48,24 @@ async function scrapeWeatherData() {
         }
       }
 
-      // Buscar viento (Wind)
-      const windLabel = tempElements.find(el => el.textContent.trim() === 'Wind');
+      // Buscar viento (Wind) - La etiqueta "Wind" aparece dos veces, necesitamos buscar en todas
+      const windLabels = tempElements.filter(el => el.textContent.trim() === 'Wind');
       let viento = null;
-      if (windLabel) {
+      for (const windLabel of windLabels) {
         const parent = windLabel.closest('div');
         if (parent) {
           const valueElements = Array.from(parent.querySelectorAll('*'));
           for (const el of valueElements) {
             const text = el.textContent.trim();
-            // Buscar número con o sin decimal (ej: 0.0, 1.8)
-                        if (/^\d+(\.\d+)?$/.test(text)) {
+            // Buscar número con o sin decimal (ej: 0, 0.0, 1.8)
+            if (/^\d+(\.\d+)?$/.test(text)) {
               viento = text + ' km/h';
               break;
             }
           }
+          if (viento) break; // Si ya encontramos el viento, salir del loop
         }
       }
-
       // Buscar presión (Pressure - Relative)
       const pressLabel = tempElements.find(el => el.textContent.trim() === 'Relative');
       let presion = null;

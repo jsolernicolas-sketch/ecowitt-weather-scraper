@@ -66,6 +66,44 @@ async function scrapeWeatherData() {
           if (viento) break; // Si ya encontramos el viento, salir del loop
         }
       }
+
+          // Buscar racha de viento (Gust)
+          const gustLabels = tempElements.filter(el => el.textContent.trim() === 'Gust');
+          let gust = null;
+          for (const gustLabel of gustLabels) {
+                  const parent = gustLabel.closest('div');
+                  if (parent) {
+                            const valueElements = Array.from(parent.querySelectorAll('*'));
+                            for (const el of valueElements) {
+                                        const text = el.textContent.trim();
+                                        // Buscar número con decimal (ej: 2.5)
+                                        if (/^\d+(\.\d+)?$/.test(text)) {
+                                                      gust = text + ' km/h';
+                                                      break;
+                                                    }
+                                      }
+                          }
+                  if (gust) break;
+                }
+
+          // Buscar intensidad de lluvia (Rain Rate /hr)
+          const rainLabels = tempElements.filter(el => el.textContent.trim() === 'Rain Rate /hr');
+          let rainRate = null;
+          for (const rainLabel of rainLabels) {
+                  const parent = rainLabel.closest('div');
+                  if (parent) {
+                            const valueElements = Array.from(parent.querySelectorAll('*'));
+                            for (const el of valueElements) {
+                                        const text = el.textContent.trim();
+                                        // Buscar número con decimal (ej: 0.0)
+                                        if (/^\d+(\.\d+)?$/.test(text)) {
+                                                      rainRate = text + ' mm/hr';
+                                                      break;
+                                                    }
+                                      }
+                          }
+                  if (rainRate) break;
+                }
       // Buscar presión (Pressure - Relative)
       const pressLabel = tempElements.find(el => el.textContent.trim() === 'Relative');
       let presion = null;
@@ -89,6 +127,8 @@ async function scrapeWeatherData() {
         humedad: humedad,
         viento: viento,
         presion: presion,
+              gust: gust,
+              rainRate: rainRate,
         timestamp: new Date().toISOString()
       };
     });

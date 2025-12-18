@@ -1,9 +1,9 @@
 {
-  "temperatura": "14.0°C",
-  "humedad": "74%",
-  "viento": "2.9 km/h",
-  "presion": "1020.5 hPa",
-  "gust": "6.5 km/h",
-  "rainRate": "0.0 mm/hr",
-  "timestamp": "2025-12-18T11:32:54.021Z"
+  "temperatura": null,
+  "humedad": null,
+  "viento": null,
+  "presion": null,
+  "gust": null,
+  "rainRate": null,
+  "timestamp": "2025-12-18T11:50:55.358Z"
 }

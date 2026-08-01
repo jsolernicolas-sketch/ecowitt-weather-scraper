@@ -1,9 +1,9 @@
 {
-  "temperatura": "29.6°C",
-  "humedad": "68%",
-  "viento": "5.8 km/h",
-  "presion": "1013.9 hPa",
-  "gust": "15.1 km/h",
+  "temperatura": "28.5°C",
+  "humedad": "73%",
+  "viento": "5.0 km/h",
+  "presion": "1013.3 hPa",
+  "gust": "7.6 km/h",
   "rainRate": "0.0 mm/hr",
-  "timestamp": "2026-08-01T18:30:00.997Z"
+  "timestamp": "2026-08-01T19:46:49.571Z"
 }

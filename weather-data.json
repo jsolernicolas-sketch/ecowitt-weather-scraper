@@ -1,9 +1,9 @@
 {
-  "temperatura": "19.1°C",
+  "temperatura": "19.0°C",
   "humedad": "91%",
-  "viento": "3.6 km/h",
-  "presion": "1017.1 hPa",
-  "gust": "4.3 km/h",
+  "viento": "0.0 km/h",
+  "presion": "1016.9 hPa",
+  "gust": "0.0 km/h",
   "rainRate": null,
-  "timestamp": "2026-10-17T18:34:25.844Z"
+  "timestamp": "2026-10-17T20:56:57.005Z"
 }
